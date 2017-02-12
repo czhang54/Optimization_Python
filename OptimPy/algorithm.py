@@ -6,16 +6,18 @@ class Algorithm(object):
     '''Base class for all optimization algorithms
     '''
     
-    def __init__(self, sde=None, **kwargs):
+    def __init__(self, optimizer=None, **kwargs):
         
-        self.optimizer     = sde
+        self.optimizer    = optimizer
         self.item         = self.optimizer.item
         self.world        = self.optimizer.item.world
         self.d            = self.world.dim
         self.N            = self.optimizer.N # Number of particles
         
+        # Access the objective function
         self.obj_fn       = self.world.obj_fns()[0]
         
+        # Performance metrics
         self.h_best       = np.zeros(self.world.num_times,) # Best function value found
         self.h_hat        = np.zeros(self.world.num_times,) # Averaged function value
         self.error        = np.zeros(self.world.num_times,) # State error
