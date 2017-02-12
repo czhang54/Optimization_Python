@@ -1,8 +1,3 @@
-"""
-Created on Mon Feb  6 17:06:35 2017
-
-@author: zhangchi314
-"""
 
 import numpy as np
 import numpy.linalg as la    
