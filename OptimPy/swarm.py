@@ -1,4 +1,3 @@
-#!/usr/bin/python2
 
 import numpy as np
 import numpy.linalg as la    
