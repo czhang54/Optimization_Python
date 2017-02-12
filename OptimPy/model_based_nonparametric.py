@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Feb  6 23:19:34 2017
-
-@author: zhangchi314
-"""
 
 '''
 Non-parametric model-based algorithms: PFO, SMC-SA, SISR, SA
