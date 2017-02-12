@@ -127,9 +127,7 @@ class Optimizer(object):
 
         # Models
         self.prior      = None # Initial conditions
-        self.drift      = None
-        self.diffusion  = None
-        self.algorithm  = None
+        self.algorithm  = None # Algorithm
         
         # Parameters set during initialization call
         self.dim        = None
