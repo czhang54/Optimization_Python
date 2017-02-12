@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Jan  9 15:04:05 2017
-
-@author: zhangchi314
-"""
 
 '''
 Parametric model-based algorithms: CE, MRAS, MEO
