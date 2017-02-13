@@ -16,3 +16,5 @@ Requirement:
   + Python 2.7
   + Numpy
   + Matplotlib
+
+A composition of several recent global optimization algorithms is presented in Optimization_algorithms.pdf
