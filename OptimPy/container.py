@@ -2,6 +2,27 @@
 import numpy as np
 import copy
 
+'''
+The purpose of container.py provides a higher level management of different types of objects, 
+including their basic definitions and their inter-connections. 
+A hierarchy structure is designed, and the specific classes are explained below:
+
+(1) World class:
+    + Sets simulation parameters (e.g., space-time dimension) 
+    + Acts as hub to which all the items (Item class objects) are added and/or removed 
+    + Gives simulation command
+
+(2) Item class:
+    An Item object can be an objective function, 
+    or instantiation of an object that will execute one optimization algorithm. 
+    For the latter, an item can have multiple Optimizers of the same type (e.g., CPF) 
+    but possibly with different set of parameters or just different versions of the algorithm. 
+
+(3) Optimizer class:
+    An Optimizer object is the unit that execute an optimization algorithm with particular choice of 
+    initialization method, update rule and other parameters. 
+'''
+
 
 class World(object):
     ''' Contains the simulation parameters and all items instantiated.
