@@ -9,7 +9,7 @@ This repository contains Python codes for simulating global optimization algorit
 Directories:
 
   + OptimPy: the package containing all the source files
-  + example: contains example programs that performs some demo simulations
+  + example: contains example programs that perform demo simulations
   
 Requirement:
 
