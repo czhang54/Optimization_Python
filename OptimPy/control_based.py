@@ -6,7 +6,8 @@ import math
 from algorithm import Algorithm # Import base class
 
 '''
-Control-based algorithms, currently the controlled particle filter (CPF)
+Control-based algorithms, currently the controlled particle filter (CPF) proposed by our research gorup. 
+Our paper is on arXiv preprint: https://arxiv.org/abs/1701.02413
 '''
 
 
@@ -26,7 +27,7 @@ class CPF(Algorithm):
         self._bw_type      = kwargs.get('bw_type', 'fixed') # Type of kernel bandwidth
         self._bw_fixed     = kwargs.get('bw_fixed', 1) # Value of bandwidth if constant
                 
-        self._phi          = np.zeros((self.world.num_times, self.N)) # Used in  the kernel method
+        self.phi          = np.zeros((self.world.num_times, self.N)) # Used in  the kernel method
         
         # Three numerical schemes to compute the control function
         if self._poisson == 'affine':
@@ -59,7 +60,7 @@ class CPF(Algorithm):
             u = self._poisson_solver.solve(X, -hdiff, TI)  
         elif self._poisson == 'kernel':       
             [phi, u] = self._poisson_solver.solve(X, -hdiff, TI, dt)
-            self._phi[TI] = phi
+            self.phi[TI] = phi
 
         ## Add diffusion noise
         if self._noise_std > 0:
@@ -252,7 +253,7 @@ class Kernel(object):
                 phi = np.dot(A, phi) + bw*hdiff
                 phi = phi - np.mean(phi) # Zero mean
         else: # Use previous phi as initial guess
-            phi = self.optimizer._phi[TI-1]
+            phi = self.optimizer.phi[TI-1]
             N_terminate = 10
             for i in range(N_terminate):
                 phi = np.dot(A, phi) + bw*hdiff
